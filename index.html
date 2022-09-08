@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="">
+  <head>
+    <meta charset="utf-8">
+    <title>Get Invoice</title>
+    <style>
+      body *{text-align:center;padding:5px;margin:10px;}
+      body{  background-image: linear-gradient(135deg,#3498db,#9b59b6);background-position: center;
+      background-repeat: no-repeat;background-size: cover;}
+      h3{color:blue;font-size: 20px;text-align: left;
+      }
+        form{background-color: #CCC;width: 900px;margin: auto 12%;border-radius: .8em}
+        form input, form select{width:80%;border: none;font-size: 16px;background-color: #FFF;border-radius: .2em;
+          padding: 10px}
+          form .products input{width: auto;}
+        form label{display: block;}
+        form input[type="submit"]{width: auto;border-radius: 1em;
+        padding:20px;color: #FFF;background-color: #3B3B98;font-size: 18px;
+      cursor: pointer;box-shadow: 0 9px #999;outline: none;}
+        form input[type="submit"]:hover{ background-color:#182C61}
+      form input[type="submit"]:active {
+  background-color: green;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+    </style>
+  </head>
+  <body>
+    <form class="form1" action="invoice.php" method="post">
+      <h1>Generate Invoice</h1>
+      <div class="customer_details">
+      <h3>Customer Details </h3><br>
+      <input type="text" name="name" value="" placeholder="Enter Buyer or company name" required><br>
+      <input type="text" name="add" value="" placeholder="Enter customer's address" required><br>
+      <input type="email" name="email" value="" placeholder="Enter customer's Email"><br>
+      <input type="tel" name="tel" value="" placeholder="Enter customer's Phone no."><br>
+      <label for="date">Enter Due Date:</label>
+      <input type="date" name="date" value="" id="date" required><br>
+      </div>
+      <div class="products">
+        <h3>Products Details</h3><br>
+        <script>
+        if(false) {
+            myclass=document.getElementsByClassName('products');
+            const inputElem = document.createElement('input');
+            inputElem.type="text";
+            inputElem.name="product2";
+            inputElem.setAttribute('placeholder','Enter product name');
+            document.body.appendChild(inputElem);
+          inputElem.classList.add('products');
+          }
+        </script>
+        <input type="text" name="product1" value="" required placeholder="Enter product Name">
+        <input type="number" name="quan" value="" class="q" placeholder="Enter Quantity">
+        <input type="number" name="price" value="" class="q" placeholder="Enter price"><br>
+     </div>
+     <div class="p_mode">
+       <select class="" name="select">
+         <option value="- Choose Payment Mode -"> - Choose Payment Mode - </option>
+         <option value="Cash">Cash</option>
+         <option value="Check">Check</option>
+         <option value="IMPS">IMPS</option>
+         <option value="NEFT">NEFT</option>
+         <option value="PAYTM">PAYTM</option>
+       </select>
+     </div>
+    <input type="submit" name="submit" value="Generate Invoice" required>
+
+    </form>
+  </body>
+</html>
